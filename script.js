@@ -145,6 +145,32 @@
         them 'reply', 'like', and 'retweet’.
         2. Each data attribute should hold the tweet's uuid.
         */
+
+        /*
+        Challenge:
+        1. Use an if statement to set the value of 
+        'likeIconClass' to the string 'liked' 
+        if the tweet has been liked. 
+        2. In the like icon tag, add 'likeIconClass' 
+        to the list of classes.
+        */    
+            let likeIconClass = '';
+            if (tweet.isLiked) {
+                likeIconClass = 'liked';
+            }
+
+            /*
+            Challenge:
+            1. Use an if statement to set the value of 
+            'retweetIconClass' to the string 
+            'retweeted' if the tweet has been retweeted. 
+            2. In the retweet icon tag, add 'retweetIconClass' 
+            to the list of classes.
+            */
+            let retweetIconClass = '';
+            if(tweet.isRetweeted) {
+                retweetIconClass = 'retweeted';
+            }
                     feedHtml += `
             <div class="tweet">
             <div class="tweet-inner">
@@ -158,11 +184,11 @@
                             ${tweet.replies.length}
                         </span>
                         <span class="tweet-detail">
-                            <i class="fa-solid fa-retweet" data-retweet="${tweet.uuid}"></i>
+                            <i class="fa-solid fa-retweet ${retweetIconClass}" data-retweet="${tweet.uuid}"></i>
                             ${tweet.retweets}
                         </span>
                         <span class="tweet-detail">
-                            <i class="fa-solid fa-heart" data-like="${tweet.uuid}"></i>
+                            <i class="fa-solid fa-heart ${likeIconClass}" data-like="${tweet.uuid}"></i>
                             ${tweet.likes}
                         </span>
                     </div>   
