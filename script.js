@@ -59,7 +59,23 @@
         const targetTweetObj =  tweetsData.filter(likedTweetObj => {
             return likedTweetObj.uuid === tweetId;
         })[0];
-        targetTweetObj.likes++;
+
+        /*
+        Challenge:
+        1. When a tweet is liked, it's 'isLiked' property
+        should be set to true.
+        2. When a tweet is unliked, it's 'isLiked' property
+        should be set to false and its 'likes' count
+        should be decremented.
+        */  
+        if (!targetTweetObj.isLiked) {
+            targetTweetObj.isLiked = !targetTweetObj.isLiked;
+            targetTweetObj.likes++
+        }
+        else {
+            targetTweetObj.isLiked = !targetTweetObj.isLiked;
+            targetTweetObj.likes--;
+        }
         render();
     }
 
