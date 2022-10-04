@@ -54,29 +54,17 @@
             return feedHtml;
         });
     }
-    getFeedHtml();
-        
-        
+
+    function render(){
         /*
-        <div class="tweet">
-            <div class="tweet-inner">
-                <img src="URL OF PROFILE PIC" class="profile-pic">
-                <div>
-                    <p class="handle">TWEET HANDLE</p>
-                    <p class="tweet-text">TWEET TEXT</p>
-                    <div class="tweet-details">
-                        <span class="tweet-detail">
-                            NUMBER OF REPLIES
-                        </span>
-                        <span class="tweet-detail">
-                            NUMBER OF LIKES
-                        </span>
-                        <span class="tweet-detail">
-                            NUMBER OF RETWEETS
-                        </span>
-                    </div>   
-                </div>            
-            </div>
-        </div>
-        
+        Challenge:
+        1. Take control of the ‘feed’ div.
+        2. Render the HTML returned by the getFeedHtml 
+            function to the 'feed' div. 
+            See if you can do this with just one line of code!
         */
+        document.getElementById('feed').innerHTML = getFeedHtml();
+        }
+        
+    // call render
+    render();
