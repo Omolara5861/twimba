@@ -43,6 +43,10 @@
         else if(e.target.dataset.retweet) {
             handleRetweetClick(e.target.dataset.retweet);
         }
+
+        else if(e.target.dataset.reply){
+            handleReplyClick(e.target.dataset.reply);
+        }
     })
 
     function handleLikeClick(tweetId){
@@ -106,6 +110,18 @@
         }
         targetedTweetObj.isRetweeted = !targetedTweetObj.isRetweeted;
         render();
+    }
+
+    function handleReplyClick(replyId){
+        /*
+        Challenge:
+        1. Use the uuid stored in 'replyId' to take control 
+           of the div containing that tweet’s replies. 
+           (Check the HTML string below to remind yourself 
+           what id that div will have.)  
+        2. Toggle the CSS class "hidden" on that div. 
+        */ 
+        document.getElementById(`replies-${replyId}`).classList.toggle('hidden');
     }
 
     function getFeedHtml() {
