@@ -12,7 +12,7 @@
     1. Bring in uuidjs.
     */
     import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
-    const tweetInput = document.getElementById('tweet-input');
+
     /*
     Challenge:
     1. Somewhere in this file there is a line of code 
@@ -137,6 +137,7 @@
     }
 
     function handleTweetBtnClick(){
+        const tweetInput = document.getElementById('tweet-input');
         /*
         Challenge:
         2. When the Tweet button is clicked, log out an object
@@ -165,9 +166,16 @@
         1. Add the new tweet object to 'tweetsData'
         and make it render at the top of the feed. 
         */ 
-
-        tweetsData.unshift(newTweet);
-        render();
+        /*
+        Challenge:
+        1. No empty tweets!
+        2. Clear the textarea after tweeting!
+        */
+        if (tweetInput.value) {
+            tweetsData.unshift(newTweet);
+            tweetInput.value = '';
+            render();
+        }
     }
 
     function getFeedHtml() {
