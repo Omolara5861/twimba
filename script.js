@@ -11,6 +11,7 @@
     const tweetBtn = document.getElementById('tweet-btn');
 
     tweetBtn.addEventListener('click', () => console.log(tweetInput.value));
+    
 
     function getFeedHtml() {
         /*
@@ -42,6 +43,13 @@
             fa-heart, 
             fa-retweet
         */
+
+        /*
+        Challenge:
+        1. Add data attributes to each of the  <i> tags. You can call
+        them 'reply', 'like', and 'retweet’.
+        2. Each data attribute should hold the tweet's uuid.
+        */
                     feedHtml += `
             <div class="tweet">
             <div class="tweet-inner">
@@ -51,15 +59,15 @@
                     <p class="tweet-text">${tweet.tweetText}</p>
                     <div class="tweet-details">
                         <span class="tweet-detail">
-                            <i class="fa-regular fa-comment-dots"></i>
+                            <i class="fa-regular fa-comment-dots" data-reply="${tweet.uuid}"></i>
                             ${tweet.replies.length}
                         </span>
                         <span class="tweet-detail">
-                            <i class="fa-solid fa-retweet"></i>
+                            <i class="fa-solid fa-retweet" data-retweet="${tweet.uuid}"></i>
                             ${tweet.retweets}
                         </span>
                         <span class="tweet-detail">
-                            <i class="fa-solid fa-heart"></i>
+                            <i class="fa-solid fa-heart" data-like="${tweet.uuid}"></i>
                             ${tweet.likes}
                         </span>
                     </div>   
