@@ -51,8 +51,8 @@
             </div>
         </div>
             `;
-            return feedHtml;
         });
+        return feedHtml;
     }
 
     function render(){
