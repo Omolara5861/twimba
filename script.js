@@ -24,7 +24,11 @@
         4. Call getFeedHtml to check it's working.
         */  
         let feedHtml = '';
-        for (let tweet of tweetsData) {
+        /*
+        Challenge:
+        1. Replace the for of with a forEach.
+        */
+        tweetsData.forEach(tweet => {
             feedHtml += `
             <div class="tweet">
             <div class="tweet-inner">
@@ -48,7 +52,7 @@
         </div>
             `;
             return feedHtml;
-        }
+        });
     }
     getFeedHtml();
         
