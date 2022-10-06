@@ -23,6 +23,12 @@ This project was developed using ![Visual Studio Code](https://img.shields.io/ba
         ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 
+## Stretch Goals
+- [ ] Add delete functionality
+- [ ] Make use of localstorage 
+- [ ] Add ability to reply tweets
+
+
 ## About Scrimba
 
 Scrimba's goal is to create the best possible coding school at the cost of a gym membership! 💜
